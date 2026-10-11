@@ -1,0 +1,220 @@
+/* ===== Warna ===== */
+:root {
+  --marun: #7a161b;
+  --marun-gelap: #4f0d11;
+  --emas: #e0b04a;
+  --teks: #262626;
+  --teks-lembut: #666666;
+  --samping: #f6efef;
+  --latar: #dcd3d3;
+  --kertas: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Trebuchet MS", "Segoe UI", Tahoma, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--teks);
+  background: var(--latar);
+  padding: 32px 16px;
+}
+
+.halaman {
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--kertas);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+/* ===== Header berwarna ===== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  background: var(--marun);
+  color: #ffffff;
+  padding: 36px 44px;
+  border-bottom: 6px solid var(--emas);
+}
+
+.header h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.4rem;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.jabatan {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--emas);
+}
+
+.kampus {
+  color: #f1dede;
+}
+
+.foto {
+  width: 160px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: top;
+  border: 5px solid #ffffff;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+/* ===== Dua kolom ===== */
+.isi {
+  display: grid;
+  grid-template-columns: 1fr 290px;
+}
+
+.utama {
+  padding: 32px 36px 40px 44px;
+}
+
+.samping {
+  background: var(--samping);
+  padding: 32px 28px 40px;
+}
+
+.bagian + .bagian {
+  margin-top: 28px;
+}
+
+.bagian h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  color: var(--marun);
+  margin-bottom: 12px;
+  padding-left: 10px;
+  border-left: 4px solid var(--emas);
+}
+
+/* ===== Linimasa (pendidikan & proyek) ===== */
+.linimasa {
+  border-left: 2px solid #e3cfcf;
+  margin-left: 6px;
+  padding-left: 20px;
+}
+
+.entri {
+  position: relative;
+}
+
+.entri + .entri {
+  margin-top: 20px;
+}
+
+.entri::before {
+  content: "";
+  position: absolute;
+  left: -27px;
+  top: 7px;
+  width: 12px;
+  height: 12px;
+  background: var(--marun);
+  border: 2px solid var(--kertas);
+  border-radius: 50%;
+}
+
+.entri h3 {
+  font-size: 1.02rem;
+  line-height: 1.35;
+}
+
+.keterangan {
+  color: var(--marun);
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin: 2px 0 4px;
+}
+
+/* ===== Data pribadi & kontak ===== */
+.data dt {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--teks-lembut);
+}
+
+.data dd {
+  margin-bottom: 12px;
+  overflow-wrap: anywhere;
+}
+
+.data a {
+  color: var(--marun);
+  text-decoration: none;
+}
+
+.data a:hover,
+.data a:focus-visible {
+  text-decoration: underline;
+}
+
+/* ===== Keahlian ===== */
+.keahlian {
+  list-style: none;
+}
+
+.keahlian li {
+  padding: 6px 0;
+  border-bottom: 1px solid #e3cfcf;
+}
+
+.keahlian li:last-child {
+  border-bottom: none;
+}
+
+/* ===== Layar kecil (HP) ===== */
+@media (max-width: 720px) {
+  .header {
+    padding: 24px 20px;
+    gap: 14px;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .foto {
+    width: 100px;
+  }
+
+  .isi {
+    grid-template-columns: 1fr;
+  }
+
+  .utama,
+  .samping {
+    padding: 24px 20px;
+  }
+}
+
+/* ===== Cetak / simpan PDF ===== */
+@media print {
+  body {
+    background: none;
+    padding: 0;
+  }
+
+  .halaman {
+    box-shadow: none;
+    max-width: none;
+  }
+
+  .header,
+  .samping {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
