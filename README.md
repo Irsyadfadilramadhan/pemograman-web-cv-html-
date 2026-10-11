@@ -1,4 +1,4 @@
 # CV Saya
 
 ## Preview CV
-![Preview CV] (img/preview-cv.png)
+![Preview CV](img/preview-cv.png)
